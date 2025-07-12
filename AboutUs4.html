@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="stylesheet" href="./font-awesome-4.7.0/css/font-awesome.css">
+    <link rel="stylesheet" href="./style.css">
+    <style>
+        .product img {
+            width: 100%;
+            height: auto;
+            box-sizing: border-box;
+            object-fit: cover;
+        }
+
+        #navbarSupportedContent>ul>li.nav-item>a.active {
+            color: rgb(170, 74, 39);
+        }
+
+        
+        :root {
+            --primary-color: coral;
+            --secondary-color: #fff;
+        }
+        body {
+            background-color: var(--secondary-color);
+            /* font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
+            overflow-x: hidden;
+        }
+        /* Animated Header */
+        .header {
+            /*background: linear-gradient(135deg, #ff6b6b 0%, #ff8e8e 100%);*/
+            color: white;
+            padding: 110px 0 0 0;
+            
+            text-align: center;
+            animation: fadeInDown 1s ease;
+        }
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        /* Interactive Content Card */
+        .about-content {
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .about-content:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+        }
+        /* Gallery Carousel */
+        .carousel-item img {
+            border-radius: 10px;
+            height: 400px;
+            object-fit: cover;
+        }
+        .carousel-control-prev, .carousel-control-next {
+            width: 5%;
+        }
+        /* Team Flip Cards */
+        .team-card {
+            perspective: 1000px;
+            margin-bottom: 30px;
+        }
+        .team-card-inner {
+            position: relative;
+            width: 100%;
+            height: 300px;
+            transition: transform 0.8s;
+            transform-style: preserve-3d;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .team-card:hover .team-card-inner {
+            transform: rotateY(180deg);
+        }
+        .team-card-front, .team-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            padding: 20px;
+        }
+        .team-card-front {
+            background-color: white;
+        }
+        .team-card-back {
+            background: linear-gradient(135deg, var(--primary-color) 0%, #ff8e8e 100%);
+            color: white;
+            transform: rotateY(180deg);
+        }
+        .team-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--primary-color);
+        }
+        /* Animated Button */
+        .btn-sweet {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 10px 25px;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        .btn-sweet:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(255, 107, 107, 0.3);
+        }
+        /* Highlight Animation */
+        .highlight {
+            position: relative;
+            display: inline-block;
+        }
+        .highlight::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 30%;
+            background-color: rgba(255, 107, 107, 0.2);
+            z-index: -1;
+            transition: height 0.3s;
+        }
+        .highlight:hover::after {
+            height: 50%;
+        }
+
+
+    </style>
+
+
+</head>
+
+
+<body>
+
+    <!-- netvigation bar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light py-3 fixed-top">
+        <div class="container">
+            <img src="./logos/logo8.png" alt="">
+            <!-- <a class="navbar-brand" href="#">goForSnack</a> -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span><i id="bar" class="fa fa-bars"></i></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="./index.html">Home</a>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
+                            Shop
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a href="./shop1.html" class="dropdown-item">All</a>
+                            <a href="./Macaron.html" class="dropdown-item">Macaron</a>
+                            <a href="./cupcake.html" class="dropdown-item">Cupcake</a>
+                            <a href="./Pudding.html" class="dropdown-item">Pudding</a>
+                            <a href="./Tiramisu.html" class="dropdown-item">Tiramisu</a>
+                        </div>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="./BlogEx4.html">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./HomeContact.html">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="./search.html" style="color:black;"><i class="fa fa-search"></i></a>
+                        <!-- <i class="fa fa-shopping-cart"></i> -->
+                        <a href="cart5.html" class="cart-link"><i class="fa fa-shopping-cart"></i>(<span id="cart-count">0</span>)</a>
+                    </li>
+
+            </div>
+    </nav>
+
+    <header class="header">
+        <div class="container">
+            <h1 style="color:black;margin-top:50px;" class="display-4 fw-bold">Sweetcake Bakery</h1>
+            <p style="color:black" class="lead fs-3">Where every dessert is a little piece of joy!</p>
+            <a href="#about" class="btn btn-sweet mt-3" style="color:#fff;">Discover Our Story <i class="fa fa-arrow-down ms-2"></i></a>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <section id="about" class="py-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="about-content" style="margin-top: 80px;">
+                        <h1 class="text-center mb-4">About Us</h1>
+                        
+                        <p>Welcome to Sweetcake Bakery Ltd, where every dessert is a little piece of joy! We're a passionate team of bakers and dreamers dedicated to crafting sweets that make life a little more delicious. From our heavenly <span class="highlight">Tiramisu</span> to our delicate <span class="highlight">Macarons</span>, fluffy <span class="highlight">Cupcakes</span>, and comforting <span class="highlight">Puddings</span>, every treat we create is made with love, care, and the finest ingredients.</p>
+                        
+                        <p>Our story began with a simple idea: to bring people together through the universal language of dessert. Whether it's a celebration, a quiet moment of indulgence, or a gift for someone special, we believe there's always room for something sweet. At SweetCake Company, we blend <span class="highlight">tradition with creativity</span>, baking each day fresh to ensure every bite is as delightful as the last.</p>
+                        
+                        <div class="text-center mt-4">
+                            <a href="#gallery" class="btn btn-sweet me-2" style="color:#fff;">View Gallery <i class="fa fa-camera ms-2"></i></a>
+                            <a href="#team" class="btn btn-outline-secondary">Meet the Team <i class="fa fa-users ms-2"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dessert Gallery Carousel -->
+    <section id="gallery" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5" style="margin-top:80px;">Our Sweet Creations</h2>
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div id="dessertCarousel" class="carousel slide" data-ride="carousel" data-interval="2000">
+                        <div class="carousel-inner rounded">
+                            <div class="carousel-item active">
+                                <img src="./logos2/sweet-dessert.jpg" class="d-block w-100" alt="Sweet Cake">
+                                <div class="carousel-caption d-none d-md-block bg-opacity-50 rounded">
+                                    <h5 style="color: white">SweetCake</h5>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <img src="./logos2/Classic-French-Macarons-2.jpg" class="d-block w-100" alt="Macarons">
+                                <div class="carousel-caption d-none d-md-block bg-opacity-50 rounded">
+                                    <h5 style="color: white">French Macarons</h5>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <img src="./logos2/LavenderCupCakes.jpg" class="d-block w-100" alt="LavenderCupCakes">
+                                <div class="carousel-caption d-none d-md-block bg-opacity-50 rounded">
+                                    <h5 style="color:white">Lavender CupCakes</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <a class="carousel-control-prev" href="#dessertCarousel" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#dessertCarousel" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Meet the Team (Flip Cards) -->
+    <section id="team" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5" style="margin-top: 80px;">Meet Our Bakers</h2>
+            <div class="row">
+                <!-- Team Member 1 -->
+                <div class="col-md-4 team-card">
+                    <div class="team-card-inner">
+                        <div class="team-card-front">
+                            <img src="https://randomuser.me/api/portraits/women/43.jpg" alt="Head Baker" class="team-img mb-3">
+                            <h4>Sarah Johnson</h4>
+                            <p class="text-muted">Head Baker</p>
+                        </div>
+                        <div class="team-card-back">
+                            <p>"I've been baking since I was 5 years old. Desserts are my love language!"</p>
+                            <div class="social-icons mt-3">
+                                <a href="#" class="text-white mx-2"><i class="fa fa-instagram"></i></a>
+                                <a href="#" class="text-white mx-2"><i class="fa fa-twitter"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Team Member 2 -->
+                <div class="col-md-4 team-card">
+                    <div class="team-card-inner">
+                        <div class="team-card-front">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Pastry Chef" class="team-img mb-3">
+                            <h4>Michael Chen</h4>
+                            <p class="text-muted">Pastry Chef</p>
+                        </div>
+                        <div class="team-card-back">
+                            <p>"French-trained but with a passion for fusion desserts that surprise and delight."</p>
+                            <div class="social-icons mt-3">
+                                <a href="#" class="text-white mx-2"><i class="fa fa-instagram"></i></a>
+                                <a href="#" class="text-white mx-2"><i class="fa fa-twitter"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Team Member 3 -->
+                <div class="col-md-4 team-card">
+                    <div class="team-card-inner">
+                        <div class="team-card-front">
+                            <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Cake Designer" class="team-img mb-3">
+                            <h4>Emma Rodriguez</h4>
+                            <p class="text-muted">Cake Designer</p>
+                        </div>
+                        <div class="team-card-back">
+                            <p>"Every cake tells a story. I help you tell yours with buttercream and fondant."</p>
+                            <div class="social-icons mt-3">
+                                <a href="#" class="text-white mx-2"><i class="fa fa-instagram"></i></a>
+                                <a href="#" class="text-white mx-2"><i class="fa fa-twitter"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="py-5 bg-light">
+        <div class="container text-center">
+            <h2 class="mb-4">Ready to Taste the Sweet Difference?</h2>
+            <p class="lead mb-4">Visit us today or place an order online!</p>
+            <a href="./AboutUs4.html" class="btn btn-sweet btn-lg me-3" style="color:#fff;"><i class="fas fa-map-marker-alt me-2" ></i> Find Us</a>
+            <a href="./shop1.html" class="btn btn-outline-secondary btn-lg"><i class="fa fa-shopping-cart me-2"></i> Order Online</a>
+        </div>
+    </section>
+
+    
+      <!-- Footer details -->
+      <footer class="mt-5 py-5">
+        <div class="row container mx-auto pt-5">
+          <div class="foot-one col-lg-3 col-md-6 col-12">
+            <img src="./logos/logo8.png">
+            <p class="pt-3">Sweetcake Bakery is your first choice.</p>
+          </div>
+          <div class="footer-one col-lg-3 col-md-6 col-12">
+            <h5 class="pb-2">Various</h5>
+            <ul class="text-uppercase list-unstyled">
+              <li><a href="./shop1.html">all</a></li>
+              <li><a href="./Macaron.html">maracon</a></li>
+              <li><a href="./cupcake.html">cupcake</a></li>
+              <li><a href="./Pudding.html">pudding</a></li>
+              <li><a href="./Tiramisu.html">Tiramisu</a></li>
+           
+            </ul>
+          </div>
+
+          <div class="footer-one col-lg-3 col-md-6 col-12">
+            <h5 class="pb-2">Contact Us</h5>
+            <div>
+              <h6>Address</h6>
+              <p>123 Sweet Street, Central, Hong Kong</p>
+            </div>
+            <div>
+              <h6>Phone</h6>
+              <p>(852) 12345678</p>
+            </div>
+            <div>
+              <h6>Email</h6>
+              <p>hello@sweetdelights.hk</p>
+            </div>
+          </div>
+
+          <div class="footer-one col-lg-3 col-md-6 col-12">
+            <h5 class="pb-2">Instagram</h5>
+            <div class="row">
+                <a href="https://www.instagram.com/" target="_blank"> <img class="img-fluid w-100 h-100 m-2" src="./logos/insta/flat-design-french-macaroons-template_23-2149860236.avif" alt=""></a>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="copyright mt-5">
+          <div class="row container mx-auto">
+            <div class="col-lg-5 col-md-6 col-12">
+              <img src="./logos/pay/Payment1hk.png" style="width:50%;height:50%" alt="">
+              <img src="./logos/pay/Payment2hk.png" style="width:50%;height:50%" alt="">
+            </div>
+            <div class="col-lg-4 col-md-6 col-12 text-nowrap">
+              <br>
+              <p>ABC eCommerce @ 2025. All Rights Reserved</p>
+            </div>
+            <div class="col-lg-3 col-md-6 col-12" style="margin-top:10px;">
+                <a href="https://www.facebook.com/" target="_blank"><i class="fa fa-facebook-official"></i></a>
+                <a href="https://x.com/" target="_blank"><i class="fa fa-twitter"></i></a>
+                <a href="https://www.whatsapp.com/" target="_blank"><i class="fa fa-whatsapp"></i></a>  
+                <a href="https://web.wechat.com/" target="_blank" ><i class="fa fa-wechat"></i></a>    
+            </div>
+          </div>
+        </div>
+
+      </footer>
+
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
+    <!-- Smooth Scroll JS -->
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+
+<script src="script4.js"></script>
+</body>
+
+</html>

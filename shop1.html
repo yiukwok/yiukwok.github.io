@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous"> 
+    <link rel="stylesheet" href="./font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./style.css">
+    <style>
+      .product img {
+        width:100%;
+        height:auto;
+        box-sizing: border-box;
+        object-fit:cover;
+      }
+
+      .pagination a{
+        color:black;
+      }
+
+      #navbarSupportedContent > ul > li.nav-item > a.active {
+        color:rgb(170, 74, 39);
+
+      }
+
+      body > div > ul > li.page-item > a.active {
+        /* background-color: black;
+        color:#fff; */
+        color:coral;
+  
+      }
+
+      body > div > ul > li:nth-child(n):hover > a {
+        background-color:coral;
+        color:#fff;
+      }
+/* ---------------------------------- */
+/* Add this to your existing style section in shop1.html */
+#product-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.product-card {
+    width: 250px;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    background: white;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.product-image-container {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+}
+
+.product-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.product-card:hover .product-image {
+    transform: scale(1.05);
+}
+
+.new-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: coral;
+    color: white;
+    padding: 3px 10px;
+    border-radius: 3px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.product-info {
+    padding: 15px;
+    text-align: center;
+}
+
+.product-name {
+    font-size: 16px;
+    margin-bottom: 10px;
+    height: 40px;
+    overflow: hidden;
+}
+
+.product-price {
+    color: coral;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.product-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.quantity {
+    text-align: center;
+}
+
+.add-to-cart {
+    background-color: coral;
+    border: none;
+    padding: 8px 0;
+}
+
+.add-to-cart:hover {
+    background-color: #e05a2c;
+}
+
+ .add-to-cart:active {
+    background-color: coral;
+    color: white;
+    box-shadow: none;
+}
+
+.add-to-cart:focus {
+    box-shadow: none;
+    outline: none;
+} 
+
+    </style>
+
+</head>
+<body>
+
+    <!-- netvigation bar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light py-3 fixed-top">
+      <div class="container">
+        <img src="./logos/logo8.png" alt="">
+        <!-- <a class="navbar-brand" href="#">goForSnack</a> -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span><i id="bar" class="fa fa-bars"></i></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto">
+
+            <!-- <li class="nav-item active">
+              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li> -->
+
+            <li class="nav-item">
+              <a class="nav-link" href="./index.html">Home</a>
+            </li>
+
+            <!-- <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
+                Dropdown
+              </a>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Something else here</a>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled">Disabled</a>
+            </li>
+          </ul>
+          <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form> -->
+
+          <li class="nav-item dropdown ">
+            <a class="nav-link active" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
+              Shop
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a href="./shop1.html" class="dropdown-item" style="color:rgb(170, 74, 39);" >All</a>
+              <a href="./Macaron.html" class="dropdown-item">Macaron</a>
+              <a href="./Cupcake.html" class="dropdown-item">Cupcake</a>
+              <a href="./Pudding.html" class="dropdown-item">Pudding</a>
+              <a href="./Tiramisu.html" class="dropdown-item">Tiramisu</a>
+           </div>
+          </li>
+
+          <!-- <li class="nav-item">
+            <a class="nav-link" href="#">Shop</a> 
+          </li> -->
+          <li class="nav-item">
+            <a class="nav-link" href="./BlogEx4.html">Blog</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./AboutUs4.html">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./HomeContact.html">Contact</a>
+          </li>
+          <li class="nav-item">
+            <a href="./search.html" style="color:black;"><i class="fa fa-search"></i></a>
+            <!-- <i class="fa fa-shopping-cart"><span id="cartorderQty">0</span></i> -->
+            <!-- <i class="fa fa-shopping-cart">(<span id="cart-count">0</span>)</i> -->
+            <!-- <a href="cart.html" class="cart-link">Cart (<span id="cart-count">0</span>)</a> -->
+            <!-- <a href="cart1.html" class="cart-link"><i class="fa fa-shopping-cart"></i>(<span id="cart-count">0</span>)</a> -->
+            <a href="cart5.html" class="cart-link"><i class="fa fa-shopping-cart"></i>(<span id="cart-count">0</span>)</a>
+          </li>
+
+
+        </div>
+      </nav>
+
+
+    <!-- Selection of dishes-->
+      <section id="Signature" my-5 py-5>
+        <div class="container mt-5 py-10 text-lg-center" style="padding-top:80px">
+          <h2 class="font-weight-bold" id="Signature-title">Our Selections</h2>
+          <hr class="mx-auto">
+          <p>Our most delicious sweet & hot pick in the shop</p>
+        </div>
+
+
+
+    <div class="container">
+      <div class="row">
+          <div class="col-12">
+              <div id="product-list" class="product-list"></div>
+          </div>
+      </div>
+  </div>
+
+      </section>
+
+      <!-- pagination -->
+      <div class="container">
+        <h2>Page</h2>
+        <ul class="pagination mt-5">
+          <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
+          <li class="page-item"><a class="page-link active" href="#">1</a></li>
+          <li class="page-item"><a class="page-link" href="#">2</a></li>
+          <li class="page-item"><a class="page-link" href="#">Next</a></li>
+        </ul>
+      </div>
+
+
+    <!-- Footer details -->
+      <footer class="mt-5 py-5">
+        <div class="row container mx-auto pt-5">
+          <div class="foot-one col-lg-3 col-md-6 col-12">
+            <img src="./logos/logo8.png">
+            <p class="pt-3">Sweetcake Bakery is your first choice.</p>
+          </div>
+          <div class="footer-one col-lg-3 col-md-6 col-12">
+            <h5 class="pb-2">Various</h5>
+            <ul class="text-uppercase list-unstyled">
+              <li><a href="./shop1.html">All</a></li>
+              <li><a href="./Macaron.html">maracon</a></li>
+              <li><a href="./cupcake.html">cupcake</a></li>
+              <li><a href="./Pudding.html">pudding</a></li>
+              <li><a href="./Tiramisu.html">Tiramisu</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-one col-lg-3 col-md-6 col-12">
+            <h5 class="pb-2">Contact Us</h5>
+            <div>
+              <h6>Address</h6>
+              <p>123 Sweet Street, Central, Hong Kong</p>
+            </div>
+            <div>
+              <h6>Phone</h6>
+              <p>(852) 12345678</p>
+            </div>
+            <div>
+              <h6>Email</h6>
+              <p>hello@sweetdelights.hk</p>
+            </div>
+          </div>
+
+          <div class="footer-one col-lg-3 col-md-6 col-12">
+            <h5 class="pb-2">Instagram</h5>
+            <div class="row">
+              <a href="https://www.instagram.com/" target="_blank"> <img class="img-fluid w-100 h-100 m-2" src="./logos/insta/flat-design-french-macaroons-template_23-2149860236.avif" alt=""></a>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="copyright mt-5">
+          <div class="row container mx-auto">
+            <div class="col-lg-5 col-md-6 col-12">
+              <img src="./logos/pay/Payment1hk.png" style="width:50%;height:50%" alt="">
+              <img src="./logos/pay/Payment2hk.png" style="width:50%;height:50%" alt="">
+            </div>
+            <div class="col-lg-4 col-md-6 col-12 text-nowrap">
+              <br>
+              <p>ABC eCommerce @ 2025. All Rights Reserved</p>
+            </div>
+            <div class="col-lg-3 col-md-6 col-12" style="margin-top:10px;">
+              <a href="https://www.facebook.com/" target="_blank"><i class="fa fa-facebook-official"></i></a>
+              <a href="https://x.com/" target="_blank"><i class="fa fa-twitter"></i></a>
+              <a href="https://www.whatsapp.com/" target="_blank"><i class="fa fa-whatsapp"></i></a>  
+              <a href="https://web.wechat.com/" target="_blank" ><i class="fa fa-wechat"></i></a>     
+            </div>
+          </div>
+        </div>
+
+
+
+      </footer>
+
+
+    <script>
+      var ttlOrderQty = 0;
+      var orderedItem12= 0;
+      var orderedItem11=0;
+
+      function shopNowFunction1() {
+        ttlOrderQty++;
+        document.getElementById("cartorderQty").innerHTML = ttlOrderQty;
+        orderedItem12++;
+      }
+
+      function shopNowFunction2() {
+        ttlOrderQty ++;
+        document.getElementById("cartorderQty").innerHTML = ttlOrderQty;
+        orderedItem11++;
+      }
+
+
+    </script>
+    
+
+    
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
+
+    <script>
+      // Add event listeners to close the dropdown when the mouse leaves
+      $(document).ready(function () {
+          // When the mouse leaves the dropdown area, hide the dropdown
+          $('.nav-item.dropdown').on('mouseleave', function () {
+              // Use Bootstrap's JavaScript API to hide the dropdown
+              $(this).find('.dropdown-menu').removeClass('show');
+              $(this).find('.dropdown-toggle').attr('aria-expanded', 'false');
+          });
+  
+          // Ensure the dropdown opens on hover
+          $('.nav-item.dropdown').on('mouseenter', function () {
+              $(this).find('.dropdown-menu').addClass('show');
+              $(this).find('.dropdown-toggle').attr('aria-expanded', 'true');
+          });
+      });
+  </script>
+
+  <script src="script4.js"></script>
+
+</body>
+</html>

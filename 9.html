@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Choice 1</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="stylesheet" href="./font-awesome-4.7.0/css/font-awesome.css">
+    <link rel="stylesheet" href="./style.css">
+    <style>
+ 
+      .product1 {
+        margin-top: 50px;
+        width:300px;
+        height:300px;
+        box-sizing: border-box;
+        object-fit:cover;
+      } 
+
+      #navbarSupportedContent > ul > li.nav-item > a.active {
+        color:rgb(170, 74, 39);
+      }
+
+      #home1 {
+    /* background-image:url("./logos/sweet-dessert-isolated_599862-22168version3.jpg"); */
+       /* background-image:url("./logos/christmas-marzipan-sweets-isolated-white-background_762785-47550.avif"); */
+       margin-top:130px;
+    width:100%;
+    height:100vh;
+    /* background-size: cover; */
+    /* background-position: top 0px center; */
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items:center;
+    /* align-items: flex-start; */
+    }
+
+    /* .sproduct {
+      align-items: center;
+    } */
+
+    body > section > div > div.col-lg-6.col-md-12.col-12 > div > button {
+      background-color: coral;
+    }
+
+    body > section > div > div.col-lg-6.col-md-12.col-12 > div > button:hover {
+      opacity: 0.7;
+    } 
+
+    </style>
+
+</head>
+<body>
+
+    <!-- netvigation bar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light py-3 fixed-top">
+      <div class="container">
+        <img src="./logos/logo8.png" alt="">
+        <!-- <a class="navbar-brand" href="#">goForSnack</a> -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span><i id="bar" class="fa fa-bars"></i></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto">
+
+            <!-- <li class="nav-item active">
+              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li> -->
+
+            <li class="nav-item">
+              <a class="nav-link" href="./index.html">Home</a>
+            </li>
+
+            <!-- <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
+                Dropdown
+              </a>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Something else here</a>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled">Disabled</a>
+            </li>
+          </ul>
+          <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form> -->
+
+          <li class="nav-item dropdown">
+            <a class="nav-link active" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
+              Shop
+            </a>
+            <div class="dropdown-menu active" aria-labelledby="navbarDropdown">
+              <a href="./shop1.html" class="dropdown-item">All</a>
+              <a href="./Macaron.html" class="dropdown-item">Macaron</a>
+              <a href="./cupcake.html" class="dropdown-item" >Cupcake</a>
+              <a href="./Pudding.html" class="dropdown-item">Pudding</a>
+              <a href="./Tiramisu.html" class="dropdown-item" style="color:rgb(170, 74, 39);">Tiramisu</a>
+           </div>
+          </li>
+
+          <!-- <li class="nav-item">
+            <a class="nav-link" href="#">Shop</a> 
+          </li> -->
+          <li class="nav-item">
+            <a class="nav-link" href="./BlogEx4.html">Blog</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./AboutUs4.html">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./HomeContact.html">Contact</a>
+          </li>
+          <li class="nav-item">
+            <a href="./search.html" style="color:black"><i class="fa fa-search"></i></a>
+            <!-- <i class="fa fa-shopping-cart"></i> -->
+            <a href="cart5.html" class="cart-link"><i class="fa fa-shopping-cart"></i>(<span id="cart-count">0</span>)</a>
+
+          </li>
+
+        </div>
+      </nav>
+
+       <section class="container sproduct my-5 pt-5">
+          <div class="row mt-5">
+            <div class="col-lg-5 col-md-12 col-12">
+               <!-- Change src, data-id, h2, h3 & recipe for different product -->
+              <img class="product1" src="./logos/products/tiramisu/tiramisuforCoffeelovers.jpg" alt="">
+            </div>
+            <div class="col-lg-6 col-md-12 col-12" style="margin-top: 50px;" data-id="9">
+              <h2>Coffee Tiramisu </h2>
+              <h3>$40</h3>
+              <div class="product-actions">
+                <input type="number" min="1" value="1" class="quantity">
+                <button class="btn add-to-cart" style = "color:#fff">Add to cart</button>
+                <h4>Recipe details</h4>
+                <span> 4 egg yolks · 2/3 cup (130gr) sugar · 1/2 teaspoon vanilla extract · 16 oz (450gr) mascarpone cheese · 1/2 cup (120 ml) heavy whipping ..</span>
+            </div>
+            </div> 
+
+          </div>
+
+        </section>
+
+
+    <!-- Footer details -->
+      <footer class="mt-5 py-5">
+        <div class="row container mx-auto pt-5">
+          <div class="foot-one col-lg-3 col-md-6 col-12">
+            <img src="./logos/logo8.png">
+            <p class="pt-3">Sweetcake Bakery is your first choice.</p>
+          </div>
+          <div class="footer-one col-lg-3 col-md-6 col-12">
+            <h5 class="pb-2">Various</h5>
+            <ul class="text-uppercase list-unstyled">
+              <li><a href="./shop1.html">all</a></li>
+              <li><a href="./Macaron.html">maracon</a></li>
+              <li><a href="./cupcake.html">cupcake</a></li>
+              <li><a href="./Pudding.html">pudding</a></li>
+              <li><a href="./Tiramisu.html">Tiramisu</a></li>
+
+            </ul>
+          </div>
+
+          <div class="footer-one col-lg-3 col-md-6 col-12">
+            <h5 class="pb-2">Contact Us</h5>
+            <div>
+              <h6>Address</h6>
+              <p>123 Sweet Street, Central, Hong Kong</p>
+            </div>
+            <div>
+              <h6>Phone</h6>
+              <p>(852) 12345678</p>
+            </div>
+            <div>
+              <h6>Email</h6>
+              <p>hello@sweetdelights.hk</p>
+            </div>
+          </div>
+
+          <div class="footer-one col-lg-3 col-md-6 col-12">
+            <h5 class="pb-2">Instagram</h5>
+            <div class="row">
+            <a href="https://www.instagram.com/" target="_blank"> <img class="img-fluid w-100 h-100 m-2" src="./logos/insta/flat-design-french-macaroons-template_23-2149860236.avif" alt=""></a>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="copyright mt-5">
+          <div class="row container mx-auto">
+            <div class="col-lg-5 col-md-6 col-12">
+              <img src="./logos/pay/Payment1hk.png" style="width:50%;height:50%" alt="">
+              <img src="./logos/pay/Payment2hk.png" style="width:50%;height:50%" alt="">
+            </div>
+            <div class="col-lg-4 col-md-6 col-12 text-nowrap">
+              <br>
+              <p>ABC eCommerce @ 2025. All Rights Reserved</p>
+            </div>
+            <div class="col-lg-3 col-md-6 col-12" style="margin-top:10px;">
+              <a href="https://www.facebook.com/" target="_blank"><i class="fa fa-facebook-official"></i></a>
+              <a href="https://x.com/" target="_blank"><i class="fa fa-twitter"></i></a>
+              <a href="https://www.whatsapp.com/" target="_blank"><i class="fa fa-whatsapp"></i></a>  
+              <a href="https://web.wechat.com/" target="_blank" ><i class="fa fa-wechat"></i></a>       
+            </div>
+          </div>
+        </div>
+
+
+
+      </footer>
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
+
+    <script>
+      // Add event listeners to close the dropdown when the mouse leaves
+      $(document).ready(function () {
+          // When the mouse leaves the dropdown area, hide the dropdown
+          $('.nav-item.dropdown').on('mouseleave', function () {
+              // Use Bootstrap's JavaScript API to hide the dropdown
+              $(this).find('.dropdown-menu').removeClass('show');
+              $(this).find('.dropdown-toggle').attr('aria-expanded', 'false');
+          });
+  
+          // Ensure the dropdown opens on hover
+          $('.nav-item.dropdown').on('mouseenter', function () {
+              $(this).find('.dropdown-menu').addClass('show');
+              $(this).find('.dropdown-toggle').attr('aria-expanded', 'true');
+          });
+      });
+  </script>
+
+  <script src="script4.js"></script>
+  <script>
+
+    // Add to cart functionality for this specific product
+  document.addEventListener('DOMContentLoaded', function() {
+    const addToCartBtn = document.querySelector('.add-to-cart');
+    if (addToCartBtn) {
+      addToCartBtn.addEventListener('click', function() {
+        const productElement = this.closest('[data-id]');
+        const productId = parseInt(productElement.dataset.id);
+        const quantity = parseInt(productElement.querySelector('.quantity').value);
+        addToCart(productId, quantity);
+      });
+    }
+    
+    // Initialize cart count
+    updateCartCount();
+  });
+
+  </script>
+
+</body>
+</html>
